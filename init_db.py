@@ -1,0 +1,27 @@
+import sqlite3
+
+conn = sqlite3.connect("shop.db")
+conn.execute("CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, price INTEGER)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Наушники', 4999)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Планшет', 14999)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Плеер', 2499)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Мышка', 2999)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Клавиатура', 3499)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Колонка', 5999)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Powerbank', 1999)")
+conn.execute("INSERT INTO products (name, price) VALUES ('Веб-камера', 2799)")
+
+conn.execute("CREATE TABLE reviews (id INTEGER PRIMARY KEY, product_id INTEGER, text TEXT)")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (1, 'Звук очень хороший, за свою цену отличный товар.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (1, 'Удобные, не давят на уши даже после долгой носки.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (2, 'Не виснет, интерфейс приятный, много памяти. Советую!')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (2, 'Экран яркий, батарея держит весь день.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (3, 'В наше время очень нужная вещь, хороший плеер.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (4, 'Круто выглядит, хорошо лежит в руке, работает без задержек!')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (4, 'Колёсико прокрутки удобное, брал для работы.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (5, 'Клавиши тихие, подойдёт для ночной работы.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (6, 'Басы приятные, для дома самое то.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (7, 'Заряжает телефон раза три подряд, удобный размер.')")
+conn.execute("INSERT INTO reviews (product_id, text) VALUES (8, 'Картинка чёткая, микрофон тоже неплохой.')")
+
+conn.commit()
